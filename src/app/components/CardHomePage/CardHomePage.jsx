@@ -5,8 +5,11 @@ import React, { useState } from 'react'
 import {AiFillHeart} from 'react-icons/ai'
 import {AiOutlineHeart} from 'react-icons/ai'
 import db from '../../../../public/db.json'
+import { useRouter } from 'next/navigation'
 
 const CardHomePage = () => {
+
+  const router = useRouter()
 
   const [cards, setCards] = useState(db.data);
 
@@ -22,13 +25,16 @@ const CardHomePage = () => {
     }
   };
 
+  const redirect = (id) => {
+    router.push(`/filme/${id}`)
+  }
 
   return (
     <div className='flex justify-between flex-wrap gap-6'>
       {cards.map((card) => (
         <div className='rounded-b-2xl border-2 border-gray-500' key={card.id}>
           <div className='w-[282px] h-[425px] bg-black'>
-            <Link href={card.link}>
+            <div className='cursor-pointer' onClick={() => redirect(card.id)}>
               <Image
               alt='Foto usuário'
               src={card.capa}
@@ -36,7 +42,7 @@ const CardHomePage = () => {
               height={425}
               className='w-full h-full'
               />
-            </Link>
+            </div>
           </div>
           <div className='w-[282px] h-[116px] rounded-b-2xl bg-[#E2E2E2] shadow-2xl relative border-2' >
             <h1 className='text-xl font-bold px-[27px]'>

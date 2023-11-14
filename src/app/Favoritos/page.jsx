@@ -14,7 +14,7 @@ const LikedPage = () => {
             />
           </div>
           <div className="px-[200px] mb-32">
-            <div className="mb-12">
+            <div className='mb-12'>
               <h1 className="font-semibold text-3xl text-center">Meus favoritos</h1>
             </div>
             <CardFavoritos/>

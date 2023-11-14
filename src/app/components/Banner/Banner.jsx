@@ -3,11 +3,11 @@ import React from 'react'
 
 const Banner = ({banner}) => {
   return (
-    <div className='w-full h-[347px]'>
+    <div className='w-full h-[347px] pb-8'>
         <Image
         src={banner}
         alt='banner'
-        className='w-full h-fit'
+        className='w-full h-full'
         />
     </div>
   )
