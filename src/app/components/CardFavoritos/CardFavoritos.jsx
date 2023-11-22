@@ -31,7 +31,7 @@ const CardFavoritos = () => {
     }
 
   return (
-    <div className='flex justify-around flex-wrap gap-6'>
+    <div className='flex justify-around max-[820px]:justify-center flex-wrap gap-6'>
       {cards.map((card) => (
         card.liked === true &&
         <div className='rounded-b-2xl cursor-pointer border-2 border-gray-500' key={card.id}>

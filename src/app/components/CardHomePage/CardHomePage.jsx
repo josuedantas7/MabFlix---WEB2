@@ -30,7 +30,7 @@ const CardHomePage = () => {
   }
 
   return (
-    <div className='flex justify-between flex-wrap gap-6'>
+    <div className='flex justify-between max-[820px]:justify-center flex-wrap gap-6'>
       {cards.map((card) => (
         <div className='rounded-b-2xl border-2 border-gray-500' key={card.id}>
           <div className='w-[282px] h-[425px] bg-black'>

@@ -31,6 +31,7 @@ const page = ({params}) => {
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    className='max-[920px]:w-[500px] max-[920px]:h-[400px] max-[570px]:w-[350px] max-[570px]:h-[300px] max-[390px]:w-[300px] max-[390px]:h-[200px]'
                 ></iframe>
             </div>
         </div>

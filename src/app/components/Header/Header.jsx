@@ -5,14 +5,17 @@ import Image from 'next/image'
 
 const Header = () => {
   return (
-    <div className='px-[200px] h-[88px] w-full bg-black text-white flex items-center justify-between'>
+    <div className='px-[200px] max-[1030px]:px-[100px] max-[390px]:px-0 w-full bg-black text-white flex items-center max-[820px]:flex-col max-[820px]:py-4 py-4 justify-between'>
         <div>
-            <Image
-            alt='Logo header'
-            src={logoHeader}
-            width={169.5}
-            height={48}
-            />
+            <Link href={"/"}>
+              <Image
+              alt='Logo header'
+              src={logoHeader}
+              width={169.5}
+              height={48}
+              className='max-[390px]:w-full'
+              />
+            </Link>
         </div>
         <div className='flex text-[#F0F0F0] gap-[25px]'>
             <Link className='hover:text-gray-300 transition-all duration-300 hover:scale-110 hover:underline' href={"/"}>Home</Link>
