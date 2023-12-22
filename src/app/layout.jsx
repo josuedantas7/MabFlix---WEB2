@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import CardProvider from './components/context/CardContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,12 +14,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body>]
+        <CardProvider>
         <Header/>
         {children}
         <div className='fixed bottom-0 w-full'>
           <Footer/>
         </div>
+        </CardProvider>
         </body>
     </html>
   )
