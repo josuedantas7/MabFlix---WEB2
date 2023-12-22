@@ -1,29 +1,19 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {AiFillHeart} from 'react-icons/ai'
 import {AiOutlineHeart} from 'react-icons/ai'
 import db from '../../../../public/db.json'
 import { useRouter } from 'next/navigation'
+import { CardContext } from '../context/CardContext'
 
 const CardHomePage = () => {
 
+  const { cards, handleLikeToggle } = useContext(CardContext)
+
   const router = useRouter()
 
-  const [cards, setCards] = useState(db.data);
-
-  const handleLikeToggle = (cardId) => {
-
-    const updatedCards = [...cards];
-
-    const cardToUpdate = updatedCards.find((card) => card.id === cardId);
-
-    if (cardToUpdate) {
-      cardToUpdate.liked = !cardToUpdate.liked;
-      setCards(updatedCards);
-    }
-  };
 
   const redirect = (id) => {
     router.push(`/filme/${id}`)
